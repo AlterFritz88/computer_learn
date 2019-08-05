@@ -1,0 +1,82 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55c051acd1d0 .scope module, "gates_test" "gates_test" 2 3;
+ .timescale -9 -9;
+v0x55c051aed8f0_0 .var "a", 3 0;
+v0x55c051aed9d0_0 .var "b", 3 0;
+v0x55c051aeda70_0 .net "y1", 3 0, L_0x55c051aeddf0;  1 drivers
+v0x55c051aedb10_0 .net "y2", 3 0, L_0x55c051aedf50;  1 drivers
+v0x55c051aedbb0_0 .net "y3", 3 0, L_0x55c051aee030;  1 drivers
+v0x55c051aedc50_0 .net "y4", 3 0, L_0x55c051aee260;  1 drivers
+v0x55c051aedd20_0 .net "y5", 3 0, L_0x55c051aee380;  1 drivers
+S_0x55c051acd350 .scope module, "UUT" "gates" 2 7, 3 1 0, S_0x55c051acd1d0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 4 "a"
+    .port_info 1 /INPUT 4 "b"
+    .port_info 2 /OUTPUT 4 "y1"
+    .port_info 3 /OUTPUT 4 "y2"
+    .port_info 4 /OUTPUT 4 "y3"
+    .port_info 5 /OUTPUT 4 "y4"
+    .port_info 6 /OUTPUT 4 "y5"
+L_0x55c051aeddf0 .functor AND 4, v0x55c051aed8f0_0, v0x55c051aed9d0_0, C4<1111>, C4<1111>;
+L_0x55c051aedf50 .functor OR 4, v0x55c051aed8f0_0, v0x55c051aed9d0_0, C4<0000>, C4<0000>;
+L_0x55c051aee030 .functor XOR 4, v0x55c051aed8f0_0, v0x55c051aed9d0_0, C4<0000>, C4<0000>;
+L_0x55c051aee1a0 .functor AND 4, v0x55c051aed8f0_0, v0x55c051aed9d0_0, C4<1111>, C4<1111>;
+L_0x55c051aee260 .functor NOT 4, L_0x55c051aee1a0, C4<0000>, C4<0000>, C4<0000>;
+L_0x55c051aee2d0 .functor OR 4, v0x55c051aed8f0_0, v0x55c051aed9d0_0, C4<0000>, C4<0000>;
+L_0x55c051aee380 .functor NOT 4, L_0x55c051aee2d0, C4<0000>, C4<0000>, C4<0000>;
+v0x55c051acd580_0 .net *"_s10", 3 0, L_0x55c051aee2d0;  1 drivers
+v0x55c051aed0e0_0 .net *"_s6", 3 0, L_0x55c051aee1a0;  1 drivers
+v0x55c051aed1c0_0 .net "a", 3 0, v0x55c051aed8f0_0;  1 drivers
+v0x55c051aed280_0 .net "b", 3 0, v0x55c051aed9d0_0;  1 drivers
+v0x55c051aed360_0 .net "y1", 3 0, L_0x55c051aeddf0;  alias, 1 drivers
+v0x55c051aed490_0 .net "y2", 3 0, L_0x55c051aedf50;  alias, 1 drivers
+v0x55c051aed570_0 .net "y3", 3 0, L_0x55c051aee030;  alias, 1 drivers
+v0x55c051aed650_0 .net "y4", 3 0, L_0x55c051aee260;  alias, 1 drivers
+v0x55c051aed730_0 .net "y5", 3 0, L_0x55c051aee380;  alias, 1 drivers
+    .scope S_0x55c051acd1d0;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "waveforms.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55c051acd1d0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x55c051acd1d0;
+T_1 ;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55c051aed8f0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x55c051aed9d0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x55c051aed8f0_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55c051aed9d0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55c051aed8f0_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55c051aed9d0_0, 0, 4;
+    %delay 100, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x55c051aed8f0_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x55c051aed9d0_0, 0, 4;
+    %end;
+    .thread T_1;
+    .scope S_0x55c051acd1d0;
+T_2 ;
+    %vpi_call 2 30 "$monitor", "%b  %b:    %b %b %b %b %b", v0x55c051aed8f0_0, v0x55c051aed9d0_0, v0x55c051aeda70_0, v0x55c051aedb10_0, v0x55c051aedbb0_0, v0x55c051aedc50_0, v0x55c051aedd20_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "gates_test.sv";
+    "gates.sv";

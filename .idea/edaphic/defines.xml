@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SVCompilerDirectivesDefines">
+    <option name="define">
+      <map>
+        <entry key="t">
+          <value>
+            <Define>
+              <option name="dependencies">
+                <set>
+                  <DefineDependency>
+                    <option name="file" value="example_4_2_test.sv" />
+                  </DefineDependency>
+                </set>
+              </option>
+            </Define>
+          </value>
+        </entry>
+        <entry key="tIntellijIdeaRulezzz">
+          <value>
+            <Define>
+              <option name="dependencies">
+                <set>
+                  <DefineDependency>
+                    <option name="file" value="example_4_2_test.sv" />
+                  </DefineDependency>
+                </set>
+              </option>
+            </Define>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="status" value="NORMAL" />
+    <option name="version" value="393" />
+  </component>
+</project>

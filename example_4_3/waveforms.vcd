@@ -1,0 +1,72 @@
+$date
+	Sun Jul 28 20:31:01 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module gates_test $end
+$var wire 4 ! y5 [3:0] $end
+$var wire 4 " y4 [3:0] $end
+$var wire 4 # y3 [3:0] $end
+$var wire 4 $ y2 [3:0] $end
+$var wire 4 % y1 [3:0] $end
+$var reg 4 & a [3:0] $end
+$var reg 4 ' b [3:0] $end
+$scope module UUT $end
+$var wire 4 ( a [3:0] $end
+$var wire 4 ) b [3:0] $end
+$var wire 4 * y1 [3:0] $end
+$var wire 4 + y2 [3:0] $end
+$var wire 4 , y3 [3:0] $end
+$var wire 4 - y4 [3:0] $end
+$var wire 4 . y5 [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1110 .
+b1111 -
+b1 ,
+b1 +
+b0 *
+b0 )
+b1 (
+b0 '
+b1 &
+b0 %
+b1 $
+b1 #
+b1111 "
+b1110 !
+$end
+#100
+b1 '
+b1 )
+b0 &
+b0 (
+#200
+b1110 "
+b1110 -
+b1 %
+b1 *
+b0 #
+b0 ,
+b1 &
+b1 (
+#300
+b1111 "
+b1111 -
+b1111 !
+b1111 .
+b0 %
+b0 *
+b0 $
+b0 +
+b0 '
+b0 )
+b0 &
+b0 (
