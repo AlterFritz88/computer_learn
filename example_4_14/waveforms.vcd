@@ -1,0 +1,77 @@
+$date
+	Sun Aug 11 11:49:24 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module test $end
+$var wire 8 ! y [7:0] $end
+$var reg 8 " a1 [7:0] $end
+$var reg 8 # a2 [7:0] $end
+$var reg 8 $ a3 [7:0] $end
+$var reg 2 % s [1:0] $end
+$scope module UUT $end
+$var wire 8 & a1 [7:0] $end
+$var wire 8 ' a2 [7:0] $end
+$var wire 8 ( a3 [7:0] $end
+$var wire 2 ) s [1:0] $end
+$var wire 8 * y [7:0] $end
+$var wire 8 + step [7:0] $end
+$scope module final_step $end
+$var wire 8 , b [7:0] $end
+$var wire 1 - s $end
+$var wire 8 . y [7:0] $end
+$var wire 8 / a [7:0] $end
+$upscope $end
+$scope module first_step $end
+$var wire 8 0 a [7:0] $end
+$var wire 8 1 b [7:0] $end
+$var wire 1 2 s $end
+$var wire 8 3 y [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111 3
+02
+b1111 1
+b11111111 0
+b1111 /
+b110011 .
+0-
+b110011 ,
+b1111 +
+b110011 *
+b0 )
+b110011 (
+b1111 '
+b11111111 &
+b0 %
+b110011 $
+b1111 #
+b11111111 "
+b110011 !
+$end
+#100
+b11111111 +
+b11111111 /
+b11111111 3
+12
+b1 %
+b1 )
+#200
+b1111 +
+b1111 /
+b1111 3
+b1111 !
+b1111 *
+b1111 .
+02
+1-
+b10 %
+b10 )

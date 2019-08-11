@@ -11,6 +11,9 @@
                   <DefineDependency>
                     <option name="file" value="example_4_2_test.sv" />
                   </DefineDependency>
+                  <DefineDependency>
+                    <option name="file" value="bus.sv" />
+                  </DefineDependency>
                 </set>
               </option>
             </Define>
@@ -23,6 +26,35 @@
                 <set>
                   <DefineDependency>
                     <option name="file" value="example_4_2_test.sv" />
+                  </DefineDependency>
+                  <DefineDependency>
+                    <option name="file" value="bus.sv" />
+                  </DefineDependency>
+                </set>
+              </option>
+            </Define>
+          </value>
+        </entry>
+        <entry key="ti">
+          <value>
+            <Define>
+              <option name="dependencies">
+                <set>
+                  <DefineDependency>
+                    <option name="file" value="bus.sv" />
+                  </DefineDependency>
+                </set>
+              </option>
+            </Define>
+          </value>
+        </entry>
+        <entry key="tiIntellijIdeaRulezzz">
+          <value>
+            <Define>
+              <option name="dependencies">
+                <set>
+                  <DefineDependency>
+                    <option name="file" value="bus.sv" />
                   </DefineDependency>
                 </set>
               </option>

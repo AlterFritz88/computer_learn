@@ -1,0 +1,46 @@
+$date
+	Sun Aug 11 11:37:06 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module test $end
+$var wire 7 ! y [6:0] $end
+$var reg 3 " a [2:0] $end
+$var reg 2 # b [1:0] $end
+$scope module UUT $end
+$var wire 3 $ a [2:0] $end
+$var wire 2 % b [1:0] $end
+$var wire 7 & y [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx &
+b0 %
+b111 $
+b0 #
+b111 "
+bx !
+$end
+#10
+b1110011 !
+b1110011 &
+#100
+b101 "
+b101 $
+#110
+b1010011 !
+b1010011 &
+#200
+b11 #
+b11 %
+b111 "
+b111 $
+#210
+b1111111 !
+b1111111 &

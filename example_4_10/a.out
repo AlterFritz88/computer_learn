@@ -1,0 +1,54 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55bd44ecbcb0 .scope module, "test" "test" 2 3;
+ .timescale -9 -9;
+v0x55bd44eec2a0_0 .var "a", 3 0;
+v0x55bd44eec390_0 .var "en", 0 0;
+v0x55bd44eec460_0 .net "y", 3 0, L_0x55bd44eec560;  1 drivers
+S_0x55bd44ecbe30 .scope module, "UUT" "tristate" 2 8, 3 1 0, S_0x55bd44ecbcb0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a"
+    .port_info 1 /INPUT 1 "en"
+    .port_info 2 /OUTPUT 4 "y"
+o0x7f59083a2018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+; Elide local net with no drivers, v0x55bd44ec9aa0_0 name=_s0
+v0x55bd44eebfc0_0 .net "a", 3 0, v0x55bd44eec2a0_0;  1 drivers
+v0x55bd44eec0a0_0 .net "en", 0 0, v0x55bd44eec390_0;  1 drivers
+v0x55bd44eec140_0 .net "y", 3 0, L_0x55bd44eec560;  alias, 1 drivers
+L_0x55bd44eec560 .functor MUXZ 4, o0x7f59083a2018, v0x55bd44eec2a0_0, v0x55bd44eec390_0, C4<>;
+    .scope S_0x55bd44ecbcb0;
+T_0 ;
+    %vpi_call 2 11 "$dumpfile", "waveforms.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55bd44ecbcb0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x55bd44ecbcb0;
+T_1 ;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x55bd44eec2a0_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55bd44eec390_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55bd44eec390_0, 0, 1;
+    %delay 100, 0;
+    %end;
+    .thread T_1;
+    .scope S_0x55bd44ecbcb0;
+T_2 ;
+    %vpi_call 2 26 "$display", "   a en y" {0 0 0};
+    %vpi_call 2 27 "$monitor", "%b %2b %b", v0x55bd44eec2a0_0, v0x55bd44eec390_0, v0x55bd44eec460_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test.sv";
+    "tristate.sv";
