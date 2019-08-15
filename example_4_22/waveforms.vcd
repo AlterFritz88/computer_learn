@@ -1,0 +1,51 @@
+$date
+	Thu Aug 15 19:28:30 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module test $end
+$var wire 4 ! q [3:0] $end
+$var reg 4 " d [3:0] $end
+$scope module UUT $end
+$var wire 4 # d [3:0] $end
+$var reg 4 $ q [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 $
+b1111 #
+b1111 "
+b0 !
+$end
+#100
+b1111 !
+b1111 $
+b0 "
+b0 #
+#200
+b11 !
+b11 $
+b1100 "
+b1100 #
+#300
+b1100 !
+b1100 $
+b11 "
+b11 #
+#400
+b101 !
+b101 $
+b1010 "
+b1010 #
+#500
+b0 !
+b0 $
+b1111 "
+b1111 #
+#600

@@ -1,0 +1,55 @@
+$date
+	Mon Aug 12 20:41:52 2019
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module test $end
+$var wire 4 ! y [3:0] $end
+$var reg 4 " a1 [3:0] $end
+$var reg 4 # a2 [3:0] $end
+$var reg 1 $ s $end
+$scope module UUT $end
+$var wire 4 % a1 [3:0] $end
+$var wire 4 & a2 [3:0] $end
+$var wire 1 $ s $end
+$var wire 4 ' y [3:0] $end
+$scope module t0 $end
+$var wire 4 ( a [3:0] $end
+$var wire 1 $ s $end
+$var wire 4 ) y [3:0] $end
+$upscope $end
+$scope module t1 $end
+$var wire 4 * a [3:0] $end
+$var wire 1 + s $end
+$var wire 4 , y [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 ,
+1+
+b0 *
+b0 )
+b1111 (
+b0 '
+b0 &
+b1111 %
+0$
+b0 #
+b1111 "
+b0 !
+$end
+#100
+0+
+b1111 !
+b1111 '
+b1111 )
+b1111 ,
+1$
+#200

@@ -1,0 +1,81 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x563c7f2de2a0 .scope module, "test" "test" 2 3;
+ .timescale -9 -9;
+v0x563c7f2ff130_0 .var "a1", 3 0;
+v0x563c7f2ff260_0 .var "a2", 3 0;
+v0x563c7f2ff370_0 .var "s", 0 0;
+RS_0x7fcf60b520a8 .resolv tri, L_0x563c7f2ff500, L_0x563c7f2ff5e0;
+v0x563c7f2ff460_0 .net8 "y", 3 0, RS_0x7fcf60b520a8;  2 drivers
+S_0x563c7f2de420 .scope module, "UUT" "mux2" 2 9, 3 1 0, S_0x563c7f2de2a0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 4 "a1"
+    .port_info 1 /INPUT 4 "a2"
+    .port_info 2 /INPUT 1 "s"
+    .port_info 3 /OUTPUT 4 "y"
+L_0x563c7f2ff680 .functor NOT 1, v0x563c7f2ff370_0, C4<0>, C4<0>, C4<0>;
+v0x563c7f2fed40_0 .net "a1", 3 0, v0x563c7f2ff130_0;  1 drivers
+v0x563c7f2fee30_0 .net "a2", 3 0, v0x563c7f2ff260_0;  1 drivers
+v0x563c7f2fef00_0 .net "s", 0 0, v0x563c7f2ff370_0;  1 drivers
+v0x563c7f2ff000_0 .net8 "y", 3 0, RS_0x7fcf60b520a8;  alias, 2 drivers
+S_0x563c7f2de5a0 .scope module, "t0" "tristate" 3 2, 4 1 0, S_0x563c7f2de420;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a"
+    .port_info 1 /INPUT 1 "s"
+    .port_info 2 /OUTPUT 4 "y"
+o0x7fcf60b52018 .functor BUFZ 4, C4<zzzz>; HiZ drive
+; Elide local net with no drivers, v0x563c7f2dba20_0 name=_s0
+v0x563c7f29eb00_0 .net "a", 3 0, v0x563c7f2ff130_0;  alias, 1 drivers
+v0x563c7f2fe580_0 .net "s", 0 0, v0x563c7f2ff370_0;  alias, 1 drivers
+v0x563c7f2fe620_0 .net8 "y", 3 0, RS_0x7fcf60b520a8;  alias, 2 drivers
+L_0x563c7f2ff500 .functor MUXZ 4, o0x7fcf60b52018, v0x563c7f2ff130_0, v0x563c7f2ff370_0, C4<>;
+S_0x563c7f2fe780 .scope module, "t1" "tristate" 3 3, 4 1 0, S_0x563c7f2de420;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a"
+    .port_info 1 /INPUT 1 "s"
+    .port_info 2 /OUTPUT 4 "y"
+o0x7fcf60b52168 .functor BUFZ 4, C4<zzzz>; HiZ drive
+; Elide local net with no drivers, v0x563c7f2fe9a0_0 name=_s0
+v0x563c7f2feaa0_0 .net "a", 3 0, v0x563c7f2ff260_0;  alias, 1 drivers
+v0x563c7f2feb80_0 .net "s", 0 0, L_0x563c7f2ff680;  1 drivers
+v0x563c7f2fec20_0 .net8 "y", 3 0, RS_0x7fcf60b520a8;  alias, 2 drivers
+L_0x563c7f2ff5e0 .functor MUXZ 4, o0x7fcf60b52168, v0x563c7f2ff260_0, L_0x563c7f2ff680, C4<>;
+    .scope S_0x563c7f2de2a0;
+T_0 ;
+    %vpi_call 2 12 "$dumpfile", "waveforms.vcd" {0 0 0};
+    %vpi_call 2 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x563c7f2de2a0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x563c7f2de2a0;
+T_1 ;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0x563c7f2ff130_0, 0, 4;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x563c7f2ff260_0, 0, 4;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x563c7f2ff370_0, 0, 1;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x563c7f2ff370_0, 0, 1;
+    %delay 100, 0;
+    %end;
+    .thread T_1;
+    .scope S_0x563c7f2de2a0;
+T_2 ;
+    %vpi_call 2 30 "$display", "a1 a2 s y" {0 0 0};
+    %vpi_call 2 31 "$monitor", "%b %b %b  %b", v0x563c7f2ff130_0, v0x563c7f2ff260_0, v0x563c7f2ff370_0, v0x563c7f2ff460_0 {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "test.sv";
+    "mux2.sv";
+    "tristate.sv";
